@@ -14,7 +14,7 @@ getRouter.get('/about', (req, res) => {
       })
 })
 
-getRouter.get('/lel/:id', (req, res) => {
+getRouter.get('/about/:id', (req, res) => {
     const id = req.params.id;
     con.connect(function(err) {
         if (err) throw err;
