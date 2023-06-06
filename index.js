@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from 'dotenv'
-import { Sequelize,DataTypes } from "sequelize";
+import { sequelize,DataTypes } from "./sequelize.config.js";
 dotenv.config();
 
 const app = express();
@@ -10,13 +10,6 @@ const font = process.env.FONT
 app.use(express.urlencoded({ extended: true }));
 import { postRouter } from "./post.router.js";
 import { getRouter } from "./get.router.js";
-
-const sequelize = new Sequelize(process.env.NAVN, process.env.USER, process.env.PASSWORD, {
-      host: 'localhost',
-      dialect: 'mysql',
-      logging: console.log
-
-    });
 
 const About = sequelize.define('About', {
   you: {
