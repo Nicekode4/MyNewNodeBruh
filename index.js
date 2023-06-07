@@ -55,9 +55,23 @@ app.post('/about', async (req, res) => {
             number: req.body.number
           });
   
-          console.log(req.body.title);
+          console.log(
+            req.body.you,
+            req.body.reason,
+            req.body.whoToBeatUp,
+            req.body.getDogCat,
+            req.body.number
+          );
       
-          res.send('Row inserted successfully.');
+          res.send(`
+            ${req.body.you}
+            ${req.body.reason}
+            ${req.body.whoToBeatUp}
+            ${req.body.getDogCat}
+            ${req.body.number}
+          `
+           
+          );
         } catch (error) {
           console.error(error);
           res.status(500).send('Error inserting row.');
