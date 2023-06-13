@@ -1,7 +1,7 @@
 import express from 'express'
 const postRouter = express.Router()
 
-postRouter.post('/about', async (req, res) => {
+postRouter.post('/brakeup', async (req, res) => {
     try {
         // Create a new record
         const newAbout = await About.create({
