@@ -9,6 +9,7 @@ const img = process.env.IMG
 const font = process.env.FONT
 app.use(express.urlencoded({ extended: true }));
 import { BrakeupRouter } from "./Routers/brakeup.router.js";
+import { BrugerRouter } from "./Routers/bruger.router.js";
 
 // Sync the model with the database
 app.get("/", (req, res) => {
@@ -16,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(BrakeupRouter)
+app.use(BrugerRouter)
 
 //app.use(postRouter)
 app.listen(port, () => {
