@@ -8,6 +8,10 @@ BrugerRouter.get('/user', (req, res) => {
     controller.list(req,res)
   })
 
+  BrugerRouter.get('/userauth/', (req, res) => {
+    controller.authenticate(req,res)
+  })
+
   BrugerRouter.post('/user', (req, res) => {   
     controller.create(req,res)
   })
