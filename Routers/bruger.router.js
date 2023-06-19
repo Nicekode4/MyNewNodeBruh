@@ -11,5 +11,11 @@ BrugerRouter.get('/user', (req, res) => {
   BrugerRouter.post('/user', (req, res) => {   
     controller.create(req,res)
   })
+  BrugerRouter.put('/user', (req, res) => {   
+    controller.update(req,res)
+  })
+  BrugerRouter.delete('/user', (req, res) => {   
+    controller.delete(req,res)
+  })
 
   export { BrugerRouter }

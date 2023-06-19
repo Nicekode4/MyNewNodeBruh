@@ -22,6 +22,29 @@ class BrugerController {
         }
     }
 
+    update = async (req, res) => {
+        const { id, username, password } = req.body;
+        BrakeupModel.update(
+            { username: username, password: password},
+            { where: { id: id } }
+          )
+          if (username || password) {
+            console.log(id);
+            res.sendStatus(200)
+          }
+    }
+
+    delete = async (req,res) => {
+        const { id } = req.body;
+        BrugerModel.destroy({
+            where: {
+                id: id
+            }
+            
+        })
+        res.sendStatus(200)
+    }
+
 }
 
 export default BrugerController
